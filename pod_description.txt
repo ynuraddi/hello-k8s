@@ -1,0 +1,51 @@
+Name:             hello-k8s-pod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Wed, 05 Mar 2025 23:56:49 +0500
+Labels:           <none>
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.10
+IPs:
+  IP:  10.244.0.10
+Containers:
+  hello-k8s-container:
+    Container ID:   docker://e66253779634968902e7776087c918ee98ac4748e34488f3725c87662fa2d399
+    Image:          hello-k8s:v1.0.1
+    Image ID:       docker://sha256:126f8c6d2c8d7367e4250478c9676a22e09eec9662b3bbdc8d72bc8514af1ce7
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 05 Mar 2025 23:56:50 +0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-pklrd (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-pklrd:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  81s   default-scheduler  Successfully assigned default/hello-k8s-pod to minikube
+  Normal  Pulled     80s   kubelet            Container image "hello-k8s:v1.0.1" already present on machine
+  Normal  Created    80s   kubelet            Created container: hello-k8s-container
+  Normal  Started    80s   kubelet            Started container hello-k8s-container

@@ -1,0 +1,36 @@
+Name:           hello-k8s-replicaset
+Namespace:      default
+Selector:       app=hello-k8s
+Labels:         app=hello-k8s
+Annotations:    deployment.kubernetes.io/desired-replicas: 3
+                deployment.kubernetes.io/max-replicas: 4
+Controlled By:  Deployment/hello-k8s-deployment
+Replicas:       0 current / 0 desired
+Pods Status:    0 Running / 0 Waiting / 0 Succeeded / 0 Failed
+Pod Template:
+  Labels:  app=hello-k8s
+  Containers:
+   hello-k8s-container:
+    Image:         hello-k8s:v1.0.1
+    Port:          8080/TCP
+    Host Port:     0/TCP
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Events:
+  Type    Reason            Age    From                   Message
+  ----    ------            ----   ----                   -------
+  Normal  SuccessfulCreate  2m53s  replicaset-controller  Created pod: hello-k8s-replicaset-x65cr
+  Normal  SuccessfulCreate  2m53s  replicaset-controller  Created pod: hello-k8s-replicaset-swq4n
+  Normal  SuccessfulCreate  2m53s  replicaset-controller  Created pod: hello-k8s-replicaset-5jtbc
+  Normal  SuccessfulDelete  2m53s  replicaset-controller  Deleted pod: hello-k8s-replicaset-x65cr
+  Normal  SuccessfulDelete  2m53s  replicaset-controller  Deleted pod: hello-k8s-replicaset-swq4n
+  Normal  SuccessfulDelete  2m53s  replicaset-controller  Deleted pod: hello-k8s-replicaset-5jtbc
+  Normal  SuccessfulCreate  2m16s  replicaset-controller  Created pod: hello-k8s-replicaset-qjbdh
+  Normal  SuccessfulCreate  2m16s  replicaset-controller  Created pod: hello-k8s-replicaset-5t8gc
+  Normal  SuccessfulCreate  2m16s  replicaset-controller  Created pod: hello-k8s-replicaset-sflgs
+  Normal  SuccessfulDelete  2m16s  replicaset-controller  Deleted pod: hello-k8s-replicaset-qjbdh
+  Normal  SuccessfulDelete  2m16s  replicaset-controller  Deleted pod: hello-k8s-replicaset-5t8gc
+  Normal  SuccessfulDelete  2m16s  replicaset-controller  Deleted pod: hello-k8s-replicaset-sflgs

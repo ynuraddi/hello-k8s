@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hello-k8s-replicaset
+  labels:
+    app: hello-k8s
+spec:
+  replicas: 3
+  selector:
+   matchLabels:
+     app: hello-k8s
+  template:
+    metadata:
+      labels:
+        app: hello-k8s
+    spec:
+      containers:
+      - name: hello-k8s-container
+        image: hello-k8s:v1.0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
